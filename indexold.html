@@ -3,17 +3,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Product Catalog with Search</title>
+    <title>Product Catalog</title>
     <style>
         body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
-        h1 { margin-bottom: 10px; }
-        input[type="text"] {
-            width: 100%;
-            max-width: 400px;
-            padding: 10px;
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
         .catalog { display: flex; flex-wrap: wrap; gap: 20px; }
         .item { background: white; padding: 10px; border: 1px solid #ccc; border-radius: 8px; width: 250px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
         .name { font-weight: bold; font-size: 16px; margin-bottom: 10px; }
@@ -34,24 +26,9 @@
             font-size: 14px;
         }
     </style>
-    <script>
-        function filterProducts() {
-            const input = document.getElementById("searchInput").value.toLowerCase();
-            const items = document.getElementsByClassName("item");
-            Array.from(items).forEach(item => {
-                const name = item.querySelector(".name").textContent.toLowerCase();
-                if (name.includes(input)) {
-                    item.style.display = "block";
-                } else {
-                    item.style.display = "none";
-                }
-            });
-        }
-    </script>
 </head>
 <body>
     <h1>Menu Solutions Product Catalog</h1>
-    <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Search for a product...">
     <div class="catalog">
 
         <div class="item">
